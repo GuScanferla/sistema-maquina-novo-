@@ -1,0 +1,504 @@
+/* Sistema de Gestão de Produção - CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Login Page */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    color: #4a5568;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: #718096;
+    font-size: 16px;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dashboard-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.dashboard-title {
+    color: #4a5568;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.user-badge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+.user-badge.admin { background: linear-gradient(45deg, #ff6b6b, #ee5a24); }
+.user-badge.interno { background: linear-gradient(45deg, #4ecdc4, #44a08d); }
+.user-badge.externo { background: linear-gradient(45deg, #45b7d1, #96c93d); }
+
+/* Controls */
+.controls {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.layout-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.layout-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.layout-btn.active {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Machine Grid */
+.machine-grid {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.grid-32 {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+    max-width: 800px;
+}
+
+.grid-16 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 500px;
+}
+
+/* Machine Items */
+.machine-item {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.machine-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    border-radius: 15px;
+}
+
+.machine-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Status Colors */
+.machine-item.green {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+.machine-item.yellow {
+    background: linear-gradient(135deg, #ed8936, #dd6b20);
+    box-shadow: 0 4px 15px rgba(237, 137, 54, 0.4);
+}
+
+.machine-item.red {
+    background: linear-gradient(135deg, #f56565, #e53e3e);
+    box-shadow: 0 4px 15px rgba(245, 101, 101, 0.4);
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.legend-color.green { background: linear-gradient(135deg, #48bb78, #38a169); }
+.legend-color.yellow { background: linear-gradient(135deg, #ed8936, #dd6b20); }
+.legend-color.red { background: linear-gradient(135deg, #f56565, #e53e3e); }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #48bb78, #38a169);
+    color: white;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #f56565, #e53e3e);
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 101, 101, 0.4);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-logout {
+    background: linear-gradient(45deg, #f56565, #e53e3e);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 101, 101, 0.6);
+}
+
+/* Alerts */
+.alert {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert-error {
+    background: linear-gradient(45deg, #fed7d7, #feb2b2);
+    color: #c53030;
+    border: 1px solid #fc8181;
+}
+
+.alert-success {
+    background: linear-gradient(45deg, #c6f6d5, #9ae6b4);
+    color: #2f855a;
+    border: 1px solid #68d391;
+}
+
+.alert-info {
+    background: linear-gradient(45deg, #bee3f8, #90cdf4);
+    color: #2c5282;
+    border: 1px solid #63b3ed;
+}
+
+/* Login Info */
+.login-info {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.login-info h3 {
+    color: #4a5568;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.login-info p {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .grid-32 {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    .grid-16 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .machine-item {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+    
+    .legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+    
+    .grid-container {
+        padding: 20px;
+    }
+    
+    .machine-item {
+        width: 50px;
+        height: 50px;
+        font-size: 9px;
+    }
+    
+    .dashboard-title {
+        font-size: 20px;
+    }
+}
+
+/* Auto-refresh indicator */
+.refresh-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    color: #666;
+    backdrop-filter: blur(10px);
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(102, 126, 234, 0.3);
+    border-radius: 50%;
+    border-top-color: #667eea;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
